@@ -1,8 +1,9 @@
 import React from 'react';
-import { FaBuilding, FaCalendarAlt, FaMoneyBillWave, FaSuitcase } from 'react-icons/fa';
+import { FaBuilding, FaCalendarAlt, FaMoneyBillWave, FaSuitcase, } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const HotjobCard = ({ job }) => {
-  const { title, jobType, category, applicationDeadline, company, company_logo, requirements, description, salaryRange } = job;
+  const {_id, title, jobType, category, applicationDeadline, company, company_logo, requirements, description, salaryRange } = job;
 
   return (
     <div className="card w-full bg-base-100 shadow-xl">
@@ -25,7 +26,7 @@ const HotjobCard = ({ job }) => {
         <div>
         <p className="mt-2"><strong>Requirements:</strong> </p>
             {
-                requirements.map(skill=> <p>{skill}</p>)
+                requirements.map((skill,idx)=> <li key={idx}>{skill}</li>)
             }
         </div>
         
@@ -35,7 +36,9 @@ const HotjobCard = ({ job }) => {
        
         <p className="mt-2"><FaCalendarAlt className="inline-block mr-2" /><strong>Application Deadline:</strong> {applicationDeadline}</p>
         <div className="card-actions justify-end mt-4">
-          <button className="btn btn-primary hover:bg-green-500">Apply Now</button>
+          <Link to={`/jobs/${_id}`}>
+          <button className="btn btn-primary hover:bg-green-400">Apply Now</button>
+          </Link>
         </div>
       </div>
     </div>
