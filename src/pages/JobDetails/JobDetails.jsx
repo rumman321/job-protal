@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import {
   FaBuilding,
   FaCalendarAlt,
@@ -75,7 +75,9 @@ const JobDetails = () => {
           <strong>Application Deadline:</strong> {applicationDeadline}
         </p>
         <div className="card-actions justify-end mt-4">
+          <Link to={`/jobapply/${_id}`}>
           <button className="btn btn-primary">Apply Now</button>
+          </Link>
         </div>
       </div>
     </div>

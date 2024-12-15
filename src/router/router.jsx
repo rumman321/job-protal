@@ -5,6 +5,8 @@ import Register from "../pages/Register/Register";
 import SignIn from "../pages/SignIn/SignIn";
 import JobDetails from "../pages/JobDetails/JobDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import JobApply from "../pages/JobApply/JobApply";
+import MyApplication from "../pages/MyApplication/MyApplication";
 
 
 
@@ -22,6 +24,14 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
             path:"/jobs/:id",
             element:<PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
             loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+        },
+        {
+          path:"/jobapply/:id",
+          element:<PrivateRoute><JobApply></JobApply></PrivateRoute>
+        },
+        {
+          path:"/myapplications",
+          element:<PrivateRoute><MyApplication></MyApplication></PrivateRoute>
         },
 
         {
