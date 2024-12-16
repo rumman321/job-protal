@@ -26,7 +26,7 @@ const HotjobCard = ({ job }) => {
         <div>
         <p className="mt-2"><strong>Requirements:</strong> </p>
             {
-                requirements.map((skill,idx)=> <li key={idx}>{skill}</li>)
+                // requirements.map((skill,idx)=> <li key={idx}>{skill}</li>)
             }
         </div>
         
