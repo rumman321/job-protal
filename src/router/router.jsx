@@ -8,6 +8,8 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import JobApply from "../pages/JobApply/JobApply";
 import MyApplication from "../pages/MyApplication/MyApplication";
 import Addjob from "../pages/addJob/Addjob";
+import MyPostedJob from "../pages/mypostedjob/MyPostedJob";
+import ViewApplication from "../pages/ViewApplicaion/ViewApplication";
 
 
 
@@ -33,6 +35,15 @@ import Addjob from "../pages/addJob/Addjob";
         {
           path:"/myapplications",
           element:<PrivateRoute><MyApplication></MyApplication></PrivateRoute>
+        },
+        {
+          path:"/viewapplication/:job_id",
+          element:<PrivateRoute><ViewApplication></ViewApplication></PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/job-application/jobs/${params.job_id}`)
+        },
+        {
+          path:"/mypostedjob",
+          element:<PrivateRoute><MyPostedJob></MyPostedJob></PrivateRoute>
         },
         {
           path:"/addjob",

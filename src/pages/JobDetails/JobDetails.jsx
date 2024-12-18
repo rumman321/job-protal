@@ -60,7 +60,7 @@ const JobDetails = () => {
           <p className="mt-2">
             <strong>Requirements:</strong>{" "}
           </p>
-          {requirements.map((skill, idx) => (
+          {requirements?.map((skill, idx) => (
             <li key={idx}>{skill}</li>
           ))}
         </div>
